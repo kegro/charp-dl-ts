@@ -190,8 +190,7 @@ def trainTestModel(model, X_train, Y_train_onehot, X_test, Y_test_onehot, out_mo
         #---- variables
 	n_epochs = train_params.setdefault("n_epochs", 20)
 	batch_size = train_params.setdefault("batch_size", 32)
-	
-        lr = train_params.setdefault("lr", 0.001)
+	lr = train_params.setdefault("lr", 0.001)
         beta_1 = train_params.setdefault("beta_1", 0.9)
         beta_2 = train_params.setdefault("beta_2", 0.999)
         decay = train_params.setdefault("decay", 0.0)
@@ -229,7 +228,6 @@ def trainTestValModel(model, X_train, Y_train_onehot, X_val, Y_val_onehot, X_tes
 	#---- variables
 	n_epochs = train_params.setdefault("n_epochs", 20)
         batch_size = train_params.setdefault("batch_size", 32)
-	
 	lr = train_params.setdefault("lr", 0.001)
 	beta_1 = train_params.setdefault("beta_1", 0.9)
 	beta_2 = train_params.setdefault("beta_2", 0.999)
