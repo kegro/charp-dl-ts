@@ -46,7 +46,7 @@ def main(classifier_type, train_file, test_file):
 	#-- general
 	nchannels = 10
 	#-- deep learning
-	n_epochs = 100
+	n_epochs = 5
 	batch_size = 64
 	val_rate = 0.1
 	
@@ -119,10 +119,10 @@ def main(classifier_type, train_file, test_file):
 			
 		if val_rate==0:
 			res_mat[0], res_mat[1], model, model_hist, res_mat[2], res_mat[3] = \
-				trainTestModel(model, X_train, y_train_one_hot, X_test, y_test_one_hot, model_file, n_epochs=n_epochs, batch_size=batch_size)
+				trainTestModel(model, X_train, y_train_one_hot, X_test, y_test_one_hot, model_file, n_epochs=5, batch_size=batch_size)
 		else:
 			res_mat[0], res_mat[1], model, model_hist, res_mat[2], res_mat[3] = \
-				trainTestValModel(model, X_train, y_train_one_hot, X_val, y_val_one_hot, X_test, y_test_one_hot, model_file, n_epochs=n_epochs, batch_size=batch_size)
+				trainTestValModel(model, X_train, y_train_one_hot, X_val, y_val_one_hot, X_test, y_test_one_hot, model_file, n_epochs=5, batch_size=batch_size)
 		
 		saveLossAcc(model_hist, acc_loss_file)		
 		p_test = model.predict(x=X_test)
