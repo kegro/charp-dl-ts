@@ -31,7 +31,7 @@ from sklearn.externals import joblib
 #-----------------------------------------------------------------------
 
 #-----------------------------------------------------------------------		
-def main(classifier_type, train_file, test_file, n_epochs):
+def main(classifier_type, train_file, test_file):
 
 	classif_type = ["RF", "TempCNN", "GRU-RNNbi", "GRU-RNN"]
 	if classifier_type not in classif_type:
@@ -46,7 +46,7 @@ def main(classifier_type, train_file, test_file, n_epochs):
 	#-- general
 	nchannels = 10
 	#-- deep learning
-	#n_epochs = 20
+	n_epochs = 100
 	batch_size = 64
 	val_rate = 0.1
 	
