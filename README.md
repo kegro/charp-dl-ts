@@ -1,5 +1,5 @@
 # Deep Learning for the land cover classification using time series.
-## This started as a clone of a repo from charlotte-pel - https://github.com/charlotte-pel/igarss2019-dl4sits (see here for more details)
+## This started as a clone of a repo from charlotte-pel: https://github.com/charlotte-pel/igarss2019-dl4sits (see here for more details)
 
 This original code is supporting a paper submitted to IEEE International Geoscience and Remote Sensing Symposium (IGARSS) 2019:
 ```
