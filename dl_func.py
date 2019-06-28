@@ -189,7 +189,7 @@ def Archi_GRURNN(X, nbclasses):
 def trainTestModel(model, X_train, Y_train_onehot, X_test, Y_test_onehot, out_model_file, **train_params):
         #---- variables
         #n_epochs = train_params.setdefault("n_epochs", 100)
-        n_epoch = 100
+        n_epoch = 5
 	batch_size = train_params.setdefault("batch_size", 32)
 
         lr = train_params.setdefault("lr", 0.001)
@@ -209,7 +209,7 @@ def trainTestModel(model, X_train, Y_train_onehot, X_test, Y_test_onehot, out_mo
         callback_list = [checkpoint]
 
         start_train_time = time.time()
-        hist = model.fit(x = X_train, y = Y_train_onehot, epochs = n_epochs,
+        hist = model.fit(x = X_train, y = Y_train_onehot, epochs = 5,
                 batch_size = batch_size, shuffle=True,
                 validation_data=(X_test, Y_test_onehot),
                 verbose=1, callbacks=callback_list)
@@ -229,7 +229,7 @@ def trainTestModel(model, X_train, Y_train_onehot, X_test, Y_test_onehot, out_mo
 def trainTestValModel(model, X_train, Y_train_onehot, X_val, Y_val_onehot, X_test, Y_test_onehot, out_model_file, **train_params):
 	#---- variables
 	#n_epochs = train_params.setdefault("n_epochs", 100)
-	n_epoch = 100
+	n_epoch = 5
 	batch_size = train_params.setdefault("batch_size", 32)
 	
 	lr = train_params.setdefault("lr", 0.001)
@@ -250,7 +250,7 @@ def trainTestValModel(model, X_train, Y_train_onehot, X_val, Y_val_onehot, X_tes
 	callback_list = [checkpoint, early_stop]
 		
 	start_train_time = time.time()
-	hist = model.fit(x = X_train, y = Y_train_onehot, epochs = n_epochs, 
+	hist = model.fit(x = X_train, y = Y_train_onehot, epochs = 5, 
 		batch_size = batch_size, shuffle=True,
 		validation_data=(X_val, Y_val_onehot),
 		verbose=1, callbacks=callback_list)
